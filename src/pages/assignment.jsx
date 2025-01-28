@@ -55,6 +55,7 @@ const AssignmentUploader = () => {
     try {
       await addDoc(collection(db, "hannah"), {
         content,
+        timestamp: serverTimestamp(),
       });
       setSuccessMessage("Assignment uploaded successfully!");
       setContent("");
